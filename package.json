@@ -1,0 +1,17 @@
+{
+  "name": "simple-api-node",
+  "version": "0.0.1",
+  "description": "Simple API for work with DB MySQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "Nodejs",
+    "MySQL",
+    "JavaScript",
+    "JS"
+  ],
+  "author": "BuGalter <wardoc78@gmail.com>",
+  "license": "Apache-2.0"
+}
