@@ -4,7 +4,8 @@
   "description": "Simple API for work with DB MySQL",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
   },
   "keywords": [
     "Nodejs",
@@ -13,5 +14,8 @@
     "JS"
   ],
   "author": "BuGalter <wardoc78@gmail.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
