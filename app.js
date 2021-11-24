@@ -27,8 +27,12 @@ const server = http.createServer((req, res) => {
           break;
         }
         case "/api/data": {
-          res.statusCode = 200;
+         /*  res.statusCode = 200;
           res.setHeader("Content-Type", "text/json");
+          */ 
+          res.setHeader('Content-Type', 'text/json');
+          res.setHeader('Access-Control-Allow-Origin', '*')
+          res.writeHead(200, { 'Content-Type': 'text/json' });
           res.end(JSON.stringify(testData));
           break;
         }
