@@ -12,6 +12,12 @@ app.get('/', (req, res) => {
   res.send('<h1 style="color:red;text-align:center;">Hello from simple API</h1>');
 });
 
+app.get('/api', (req, res) => {
+  console.log(req.headers);
+  res.status(200).type('json')
+  res.send(JSON.stringify(data));
+});
+
 app.listen(PORT, config.host, () => {
   console.log(`Simple API listening at http://${config.host}:${PORT}`);
 });
