@@ -11,11 +11,15 @@
     "Nodejs",
     "MySQL",
     "JavaScript",
-    "JS"
+    "JS",
+    "Express"
   ],
   "author": "BuGalter <wardoc78@gmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
