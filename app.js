@@ -13,9 +13,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  console.log(req.headers);
-  res.status(200).type('json')
-  res.send(JSON.stringify(data));
+  res.status(200);
+  return res.json(data);
 });
 
 app.listen(PORT, config.host, () => {
