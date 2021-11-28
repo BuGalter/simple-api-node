@@ -8,18 +8,19 @@ const app = express();
 
 const PORT = process.env.PORT || config.port;
 
-app.options('*', (req, res) => {
+app.options('/api', (req, res) => {
   res.status(200);
   res.set({
     'Access-Control-Request-Method': 'GET',
-    'Access-Control-Allow-Headers': 'Content-Type'
+    'Access-Control-Allow-Headers': 'API-Key, Content-Type',
+    'Access-Control-Allow-Origin': 'http://localhost:4200'
 });
   res.end();
 });
 
 app.get('/api', (req, res) => {
   res.status(200);
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200',);
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
   return res.json(data);
 });
 
