@@ -34,6 +34,41 @@ const testData = [
     number: 100,
     price: 35
   },
+  {
+    id: 6,
+    date: '23.01.2021',
+    name: 'Брюки',
+    number: 13,
+    price: 1050
+  },
+  {
+    id: 7,
+    date: '14.02.2021',
+    name: 'Юбка',
+    number: 23,
+    price: 1000
+  },
+  {
+    id: 8,
+    date: '29.03.2021',
+    name: 'Платье',
+    number: 10,
+    price: 1250
+  },
+  {
+    id: 9,
+    date: '01.04.2021',
+    name: 'Шорты',
+    number: 5,
+    price: 1450
+  },
+  {
+    id: 10,
+    date: '11.05.2021',
+    name: 'Носки',
+    number: 200,
+    price: 30
+  },
 ];
 
 module.exports = testData;
