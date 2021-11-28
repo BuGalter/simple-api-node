@@ -8,7 +8,7 @@ const app = express();
 
 const PORT = process.env.PORT || config.port;
 
-app.options('/api', (req, res) => {
+app.options('*', (req, res) => {
   res.status(200);
   res.set({
     'Access-Control-Request-Method': 'GET',
@@ -19,9 +19,14 @@ app.options('/api', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.status(200);
+  console.log(req.headers);
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-  return res.json(data);
+  if (req.headers['api-key'] === 'secret') {
+    res.status(200);
+    return res.json(data);
+  };
+  res.status(403);
+  res.end();  
 });
 
 app.get('*', (req, res) => {
