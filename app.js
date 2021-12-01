@@ -13,15 +13,15 @@ app.options('*', (req, res) => {
   res.set({
     'Access-Control-Request-Method': 'GET',
     'Access-Control-Allow-Headers': 'API-Key, Content-Type',
-    'Access-Control-Allow-Origin': 'http://localhost:4200'
+    'Access-Control-Allow-Origin': config.clientHost
 });
   res.end();
 });
 
 app.get('/api', (req, res) => {
   console.log(req.headers);
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-  if (req.headers['api-key'] === 'secret') {
+  res.setHeader('Access-Control-Allow-Origin', config.clientHost);
+  if (req.headers['api-key'] === config.apiKey) {
     res.status(200);
     return res.json(data);
   };
