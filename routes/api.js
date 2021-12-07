@@ -1,6 +1,8 @@
 const config = require('/config');
 const data = require('/test-data');
 
+const path = require('path');
+
 const express = require('express');
 const router = express.Router();
 
@@ -13,7 +15,7 @@ app.use((req, res, next) => {
   next();
 });
 
-router.route('api')
+router.route('/')
   .options((req, res) => {
     res.status(200);
     res.end();
@@ -25,4 +27,12 @@ router.route('api')
     };
     res.status(403);
     res.end();  
-  })
+  });
+
+router.route('/about', (req, res) => {
+  res.status(200);
+  res.setHeader('Content-Type', 'text/markdown; charset=utf-8')
+  res.sendFile(path.resolve(__dirname, 'README.md'));
+});
+
+module.exports = router;
