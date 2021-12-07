@@ -1,12 +1,12 @@
-const config = require('/config');
-const data = require('/test-data');
+const config = require('../config');
+const data = require('../test-data');
 
 const path = require('path');
 
 const express = require('express');
 const router = express.Router();
 
-app.use((req, res, next) => {
+router.use((req, res, next) => {
   res.set({
     'Access-Control-Request-Method': 'GET',
     'Access-Control-Allow-Headers': 'API-Key, Content-Type',
@@ -29,10 +29,10 @@ router.route('/')
     res.end();  
   });
 
-router.route('/about', (req, res) => {
+router.get('/about', (req, res) => {
   res.status(200);
   res.setHeader('Content-Type', 'text/markdown; charset=utf-8')
-  res.sendFile(path.resolve(__dirname, 'README.md'));
+  res.sendFile(path.resolve(__dirname, '../README.md'));
 });
 
 module.exports = router;
