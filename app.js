@@ -1,3 +1,10 @@
+/**
+ * app module.
+ * The main module of the application in which the configuration,
+ * processing of the main route and starting the server comes.
+ * @module simple-api-node/app
+ */
+
 const config = require('./config');
 const api = require('./routes/api');
 
