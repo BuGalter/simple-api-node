@@ -1,3 +1,13 @@
+/**
+ * test-data module.
+ * Module contains test data.
+ * @module simple-api-node/test-data
+ */
+
+/**
+ * Array of objects with test data.
+ * @return {Array.<object>} Test data.
+ */
 const testData = [
   {
     id: 1,
