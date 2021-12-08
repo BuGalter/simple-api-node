@@ -1,7 +1,7 @@
 /**
  * app module.
- * The main module of the application in which the configuration,
- * processing of the main route and starting the server comes.
+ * The main module of the application in which the configuration, created
+ * express app, processing of the main route and starting the server comes.
  * @module simple-api-node/app
  */
 
