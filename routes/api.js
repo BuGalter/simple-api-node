@@ -1,3 +1,9 @@
+/**
+ * api module.
+ * Module contains routes for api.
+ * @module simple-api-node/routes/api
+ */
+
 const config = require('../config');
 const data = require('../test-data');
 
@@ -6,6 +12,9 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
+/**
+ * Middleware for setting response headers.
+ */
 router.use((req, res, next) => {
   res.set({
     'Access-Control-Request-Method': 'GET',
@@ -15,6 +24,11 @@ router.use((req, res, next) => {
   next();
 });
 
+/**
+ * Route for main url /api.
+ * @return {response} Headers with which api is ready to work on options request
+ * and data in json format on get request, if transmitted correct api-key.
+ */
 router.route('/')
   .options((req, res) => {
     res.status(200);
@@ -29,6 +43,10 @@ router.route('/')
     res.end();  
   });
 
+/**
+ * Route for url /api/about.
+ * @return {file} Returns readme file on get request.
+ */
 router.get('/about', (req, res) => {
   res.status(200);
   res.setHeader('Content-Type', 'text/markdown; charset=utf-8')
